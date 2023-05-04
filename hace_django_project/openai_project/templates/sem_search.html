@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'sem_search' %}" method="get">
+        <input type="text" name="q" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+    {% if query %}
+        <h2>Search Results for "{{ query }}"</h2>
+        <p>TODO: Display search results here.</p>
+    {% endif %}
+{% endblock %}

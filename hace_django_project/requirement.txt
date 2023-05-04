@@ -1,0 +1,13 @@
+django
+pandas
+openai
+matplotlib
+plotly
+ipython
+num2words
+numpy
+scipy
+sklearn
+scikit-learn
+djangorestframework
+django-cors-headers
