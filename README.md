@@ -131,7 +131,36 @@ The script continues to monitor the folder, process new files, and update the Da
 Contains a django project that provides two webservices. 
 1. HACE search engine 
 2. HACE question-answering bot
+The** view.py** in the query app of the django project includes Django views for a web application that performs semantic search and handles PDF file operations. Here's a breakdown of the views:
 
+    sem_search: This view handles the semantic search functionality. It retrieves the search query from the request parameters (q) and performs a cosine similarity search using the cosine_smilarity module. The top matching results are then processed to generate URLs for viewing and downloading the corresponding PDF files. The results are formatted as JSON and returned as an HTTP response.
+
+    pdf_list: This view retrieves a list of PDF files in the media folder and generates metadata for each file, including URLs for viewing and downloading. The list of file metadata is passed to a template (pdf_list.html), which renders the HTML with the file information.
+
+    download: This view handles file downloads. It takes the filename as a parameter and constructs the file path. If the file exists, it creates a FileResponse with the file content and sets the appropriate headers for the browser to download the file. If the file does not exist, it raises an Http404 exception.
+
+    ask_hace: This view handles HACE (Hybrid Agent for Customer Engagement) requests. If the request method is GET, it retrieves the query parameter (q) and passes it to the davinci function in the cosine_smilarity module. The response from davinci is returned as an HTTP response. If the request method is not GET, it returns an "Invalid request method" response.
+
+The code also includes the following additional code:
+
+    The df_similarities DataFrame is loaded from the pickle file "C:/Users/44744/Desktop/embedded.pickle".
+    The necessary imports are included, such as HttpResponse, JsonResponse, FileResponse, Http404, response, and modules from Django and other files (cosine_smilarity).
+    The settings module is imported from openai_project.settings to access the MEDIA_ROOT path.
+    The views and functions are defined within a Django application.
+
+Note: Make sure you have the required templates and necessary configurations in your Django project for these views to work correctly.
+
+The **cosine_similarity.py** is a python file that performs a search for embedded documents based on cosine similarity. It uses OpenAI's text-embedding-ada-002 model to generate embeddings for the user query and the documents in the dataframe.
+
+Here's how the code works:
+
+    The get_embedding function takes a text input and a model name as parameters and returns the embedding for the input text using the specified model.
+
+    The search_docs function takes a dataframe (df), a user query (user_query), the number of top results to retrieve (top_n), and a boolean flag indicating whether to print the results (to_print). It calculates the embedding for the user query and computes the cosine similarity between the query embedding and the embeddings of the documents in the dataframe. It then sorts the dataframe based on the similarity scores and returns the top top_n results.
+
+    The davinci function takes a query as input. It reads a precomputed dataframe of document similarities from a pickle file. It then calls the search_docs function to retrieve the most similar documents based on the query. It sets up a conversation prompt by combining an initial prompt, the retrieved context from the similar documents, and the user question. It uses OpenAI's text-davinci-003 model to generate a response to the combined prompt.
+
+Please note that the code assumes you have the necessary dependencies installed and have a valid API key for OpenAI. Also, make sure you have the pickle file (embedded.pickle) in the specified location.
 
 **5. User Interface****
 
