@@ -87,6 +87,14 @@ Django project along with the UI from end will be moved to the cloud.
 ## Installation
 
 1. Lambda textract job creation
+2. Lambda text parsing
+
+The Architecture for text extraction is as given in the image below(check the link)
+  ![image](https://github.com/Geo4367/Project_HACE/assets/86464328/2646b335-1162-4791-8a5c-eced445d02b3)
+  
+  
+
+  
 
 
 ## Usage
