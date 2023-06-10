@@ -162,7 +162,19 @@ Here's how the code works:
 
 Please note that the code assumes you have the necessary dependencies installed and have a valid API key for OpenAI. Also, make sure you have the pickle file (embedded.pickle) in the specified location.
 
-**5. User Interface****
+**5. User Interface**
+
+JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function:
+
+    askHace(): This function is called when the user performs a query using an input field with the id "haceInput". It retrieves the query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by calling the openHacePopUp() function with the received message.
+
+    Search(): This function is called when the user performs a search using an input field with the id "myInput". It retrieves the search query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by dynamically generating a table with search results based on the received JSON data. It also sets up event listeners for each row in the table to open a content popup.
+
+    openPopUp(tr, text): This function is called when a user clicks on a row in the search results table. It takes the clicked row element (tr) and the associated content text as parameters. It opens a content popup by toggling the "show" class on the popup element and sets the popup content to the provided text.
+
+    openHacePopUp(text): This function is called when a response is received from the Hace API call. It takes the response text as a parameter. It opens a Hace popup by toggling the "show" class on the popup element and sets the popup content to the received text.
+
+    switch_tab(evt, tab): This function is called when a tab link is clicked. It takes the event object (evt) and the target tab element (tab) as parameters. It hides all tab content elements by setting their display style to "none", removes the "active" class from all tab links, shows the selected tab content element by setting its display style to "block", and adds the "active" class to the clicked tab link.
 
   
 ## Usage
