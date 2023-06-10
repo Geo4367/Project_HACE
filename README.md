@@ -175,6 +175,7 @@ hace.js: JavaScript code snippet that defines several functions for handling use
     openHacePopUp(text): This function is called when a response is received from the Hace API call. It takes the response text as a parameter. It opens a Hace popup by toggling the "show" class on the popup element and sets the popup content to the received text.
 
     switch_tab(evt, tab): This function is called when a tab link is clicked. It takes the event object (evt) and the target tab element (tab) as parameters. It hides all tab content elements by setting their display style to "none", removes the "active" class from all tab links, shows the selected tab content element by setting its display style to "block", and adds the "active" class to the clicked tab link.
+  This is used in conjunction with HTML and CSS code to create an interactive web page where users can perform searches and view search results and additional information in popups.
 
   
 ## Usage
