@@ -164,7 +164,7 @@ Please note that the code assumes you have the necessary dependencies installed 
 
 **5. User Interface**
 
-JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function:
+hace.js: JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function:
 
     askHace(): This function is called when the user performs a query using an input field with the id "haceInput". It retrieves the query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by calling the openHacePopUp() function with the received message.
 
