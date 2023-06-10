@@ -180,11 +180,13 @@ Please note that the code assumes you have the necessary dependencies installed 
 switch_tab(evt, tab): This function is called when a tab link is clicked. It takes the event object (evt) and the target tab element (tab) as parameters. It hides all tab content elements by setting their display style to "none", removes the "active" class from all tab links, shows the selected tab content element by setting its display style to "block", and adds the "active" class to the clicked tab link.
 This is used in conjunction with HTML and CSS code to create an interactive web page where users can perform searches and view search results and additional information in popups.
 
+Better to install a tomcat server inside the EC2, inside which the TestWeb user interface will be hosted. 
+
 
   
 ## Usage
 
-Explain how to use your project or application. Provide instructions, code samples, or examples to help users understand how to interact with the project. You can also include screenshots or GIFs to demonstrate functionality.
+
 
 ## Configuration
 
