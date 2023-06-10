@@ -1,4 +1,9 @@
-# Project_HACE
+# Project Title
+
+HACE SEARCH ENGINE
+
+## Description
+
 Extraction of the text 
 
 Since the data(pdfs) was saved in the AWS S3 bucket, a pipeline was built to extract
@@ -68,3 +73,64 @@ Since this is meant to be a webservice, everything accomplished above should be
 moved to the cloud. For this purpose, an EC2 instance has to be instantiated. The 
 
 Django project along with the UI from end will be moved to the cloud. 
+
+
+
+## Table of Contents
+
+1. Lambda textract job creation 
+2. Lambda text parsing
+3. Embedder Code(EC2)
+4. Hace Django Project
+5. User Interface
+
+## Installation
+
+1. Lambda textract job creation
+
+
+## Usage
+
+Explain how to use your project or application. Provide instructions, code samples, or examples to help users understand how to interact with the project. You can also include screenshots or GIFs to demonstrate functionality.
+
+## Configuration
+
+If your project requires configuration files or settings, explain how to set them up. Include information about environment variables, configuration options, or any other necessary configurations.
+
+## Contributing
+
+If you want others to contribute to your project, provide guidelines for how they can do so. Include information about submitting bug reports, feature requests, or pull requests. Specify any coding standards, conventions, or guidelines that contributors should follow.
+
+## Credits
+
+Acknowledge and give credit to any individuals, organizations, or resources that have contributed to your project. This can include libraries, frameworks, or tutorials that you used.
+
+## License
+
+Specify the license under which your project is distributed. Include any disclaimers or limitations of liability if applicable.
+
+## Support
+
+Provide information on how users can seek support for your project. Include contact details, links to documentation, or community forums where users can find help.
+
+## Frequently Asked Questions (FAQ)
+
+If there are common questions or concerns about your project, address them in this section. Provide clear and concise answers to help users resolve common issues.
+
+## Changelog
+
+If your project has multiple versions or releases, include a changelog that outlines the changes, bug fixes, and new features in each version.
+
+## Roadmap
+
+If you have plans for future development or enhancements, share them in this section. Provide an overview of upcoming features or improvements you plan to implement.
+
+## Acknowledgments
+
+Express gratitude to individuals or organizations that have supported or influenced your project. This can include mentors, colleagues, or open-source communities.
+
+## Appendix
+
+Include any additional information, references, or resources that might be useful to readers. This can include links to related documentation, tutorials, or examples.
+
+Remember that the above structure is just a suggested format, and you can adapt it to fit the specific needs of your project. The goal is to provide clear and relevant information that helps users understand and engage with your project effectively.
