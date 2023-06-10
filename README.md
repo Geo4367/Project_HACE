@@ -78,11 +78,11 @@ Django project along with the UI from end will be moved to the cloud.
 
 ## Table of Contents
 
-1. Lambda textract job creation 
-2. Lambda text parsing
-3. Embedder Code(EC2)
-4. Hace Django Project
-5. User Interface
+**1. Lambda textract job creation 
+**2. Lambda text parsing**
+**3. Embedder Code(EC2)**
+**4. Hace Django Project**
+**5. User Interface****
 
 ## Installation
 
@@ -124,6 +124,10 @@ embedder file is a Python script that monitors a folder for text files, processe
 12. Wait before checking again: The script pauses execution for 60 seconds before starting the next iteration to avoid continuous checking of the folder.
 
 The script continues to monitor the folder, process new files, and update the DataFrame with the embeddings until it is interrupted externally or a specific condition is met.
+
+
+
+
   
 ## Usage
 
