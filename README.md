@@ -104,7 +104,7 @@ Django project along with the UI from end will be moved to the cloud.
 
 what happens inside the embedder file is meticulously defined below
 
-embedder file is a Python script that monitors a folder for text files, processes the files, generates embeddings for the text using the OpenAI API, and saves the results in a pandas DataFrame. Here's a breakdown of the script:
+embedder file is a Python script that monitors a folder for text files, processes the files, generates embeddings for the text using the OpenAI API, and saves the results in a pandas DataFrame. Here's a breakdown of the script
 
 1. Import necessary libraries: The script starts by importing the required libraries, including `json`, `boto3`, `os`, `csv`, `io`, `pickle`, `time`, `pandas`, `openai`, and `clear_output`.
 
@@ -137,7 +137,7 @@ The script continues to monitor the folder, process new files, and update the Da
 Contains a django project that provides two webservices. 
 1. HACE search engine 
 2. HACE question-answering bot
-The** view.py** in the query app of the django project includes Django views for a web application that performs semantic search and handles PDF file operations. Here's a breakdown of the views:
+The** view.py** in the query app of the django project includes Django views for a web application that performs semantic search and handles PDF file operations. Here's a breakdown of the views
 
     sem_search: This view handles the semantic search functionality. It retrieves the search query from the request parameters (q) and performs a cosine similarity search using the cosine_smilarity module. The top matching results are then processed to generate URLs for viewing and downloading the corresponding PDF files. The results are formatted as JSON and returned as an HTTP response.
 
@@ -158,7 +158,7 @@ Note: Make sure you have the required templates and necessary configurations in 
 
 The **cosine_similarity.py** is a python file that performs a search for embedded documents based on cosine similarity. It uses OpenAI's text-embedding-ada-002 model to generate embeddings for the user query and the documents in the dataframe.
 
-Here's how the code works:
+Here's how the code works
 
     The get_embedding function takes a text input and a model name as parameters and returns the embedding for the input text using the specified model.
 
@@ -170,7 +170,7 @@ Please note that the code assumes you have the necessary dependencies installed 
 
 **5. User Interface**
 
-hace.js: JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function:
+hace.js: JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function
 
     askHace(): This function is called when the user performs a query using an input field with the id "haceInput". It retrieves the query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by calling the openHacePopUp() function with the received message.
 
