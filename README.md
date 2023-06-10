@@ -85,14 +85,15 @@ Django project along with the UI from end will be moved to the cloud.
 **5. User Interface****
 
 ## Installation
-
-1. Lambda textract job creation
-2. Lambda text parsing
+**1. Lambda textract job creation 
+**2. Lambda text parsing**
 
   ![image](https://github.com/Geo4367/Project_HACE/assets/86464328/2646b335-1162-4791-8a5c-eced445d02b3)
   
   Once the PDF file is uploaded to the S3 bucket directory, a trigger is set to the S3, which initiates the lambda function. The lambda function, in turn, creates a Textract job with a unique job ID. Subsequently, a cache file in JSON format is generated and stored in the intermediate S3 bucket directory. Upon this occurrence, an SNS notification is sent to notify the second lambda function, which accesses the intermediate S3 bucket directory to locate the cached JSON file using the previously generated job ID. The text parsing lambda function then extracts the text from the JSON file created during the intermediate step, and saves it as a CSV file in the output S3 bucket.
   
+ **3. Embedder Code(EC2)** 
+ 
   After which the folder containing the CSV will be mounted on the EC2 instance. Once this is done the '**Embedder Code**', a python file deployed in the EC2 will continuously monitor the csv folder for any new csv files
 
 what happens inside the embedder file is meticulously defined below
@@ -126,7 +127,13 @@ embedder file is a Python script that monitors a folder for text files, processe
 The script continues to monitor the folder, process new files, and update the DataFrame with the embeddings until it is interrupted externally or a specific condition is met.
 
 
+**4. Hace Django Project**
+Contains a django project that provides two webservices. 
+1. HACE search engine 
+2. HACE question-answering bot
 
+
+**5. User Interface****
 
   
 ## Usage
