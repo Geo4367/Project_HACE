@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/hace.css">
+
+<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script
+		src="js/hace.js"></script>
+		
+</head>
+<body>
+
+
+
+
+	<div class="header-title-logo">
+		<a href="/" data-animation-role="header-element"
+			class="preFade fadeIn"
+			style="transition-timing-function: ease; transition-duration: 0.9s; transition-delay: 0.00350877s;">
+
+			<div style="display: flex;">
+				<a href="https://www.thisishace.com/" target="_blank"> <img
+					style="position: absolute; padding-left: 30px; padding-top: 30px;"
+					height="140px"
+					src="//images.squarespace-cdn.com/content/v1/61dc473121c0a76f5b73ace9/003b1b6d-d4d3-4475-9160-c702179e3ae0/LOGO_with_transparent_background.png"
+					alt="HACE">
+				</a> <img style="width: 100%; height: 500px;"
+					src="https://images.squarespace-cdn.com/content/v1/61dc473121c0a76f5b73ace9/26c82997-3107-4bc6-ab02-385cffb1609f/Untitled.jpeg"
+					alt="HACE">
+			</div>
+
+
+		</a>
+	</div>
+	
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="switch_tab(event, 'PDF')">PDF Search</button>
+  <button class="tablinks" onclick="switch_tab(event, 'DaVinci')">Ask HACE</button>
+</div>
+
+<!-- Tab content -->
+<div id="PDF" class="tabcontent" style="display:block">
+
+	<div class="search-container"
+		style="padding-top: 50px; text-align-last: center;">
+		<form action="httpGet">
+			<input
+				style="height: 50px; width: 50%; border-radius: 20px; font-size: 20px; font-family: Poppins;"
+				type="text" placeholder="SEARCH PDF..." name="search" id="myInput">
+
+			<button type="button" class="btn btn-primary" id="myBtn"
+				style="width: 120px; height: 50px; border-radius: 20px; font-size: 20px; font-family: Poppins;"
+				onclick="Search()">SEARCH</button>
+
+			<script>
+			var input = document.getElementById("myInput");
+			input.addEventListener("keypress", function(event) {
+			  if (event.key === "Enter") {
+			    event.preventDefault();
+			    document.getElementById("myBtn").click();
+			  }
+			});
+			</script>
+		</form>
+	</div>
+	
+
+  <div id="response" style="margin: 10px"></div>
+	<div id="popup"
+		style="padding: 12px; display: none; text-align: justify; line-height: 25px; height: 250px; 
+		overflow-y: auto; border: solid; border-radius: 6px; margin: 20px; background-color: snow;
+		 border-color: darkgray; border-width: 3px;"></div>
+
+</div>
+
+<div id="DaVinci" class="tabcontent">
+  <div class="search-container"
+		style="padding-top: 50px; text-align-last: center;">
+		<form action="httpGet">
+			<input
+				style="height: 50px; width: 50%; border-radius: 20px; font-size: 20px; font-family: Poppins;"
+				type="text" placeholder="ASK HACE..." name="search" id="haceInput">
+
+			<button type="button" class="btn btn-primary" id="haceBtn"
+				style="width: 120px; height: 50px; border-radius: 20px; font-size: 20px; font-family: Poppins;"
+				onclick="askHace()">SEARCH</button>
+
+			<script>
+			var input = document.getElementById("haceInput");
+			input.addEventListener("keypress", function(event) {
+			  if (event.key === "Enter") {
+			    event.preventDefault();
+			    document.getElementById("haceBtn").click();
+			  }
+			});
+			</script>
+		</form>
+	</div>
+  
+	<div id="hacePopup"
+		style="padding: 12px; display: none; text-align: justify; line-height: 25px; height: 250px; 
+		overflow-y: auto; border: solid; border-radius: 6px; margin: 20px; background-color: snow;
+		 border-color: darkgray; border-width: 3px;"></div>
+
+</div>
+
+
+</body>
+</html>
