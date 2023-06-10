@@ -148,23 +148,20 @@ The** view.py** in the query app of the django project includes Django views for
     ask_hace: This view handles HACE (Hybrid Agent for Customer Engagement) requests. If the request method is GET, it retrieves the query parameter (q) and passes it to the davinci function in the cosine_smilarity module. The response from davinci is returned as an HTTP response. If the request method is not GET, it returns an "Invalid request method" response.
 
 The code also includes the following additional code:
-
-    The df_similarities DataFrame is loaded from the pickle file "C:/Users/44744/Desktop/embedded.pickle".
-    The necessary imports are included, such as HttpResponse, JsonResponse, FileResponse, Http404, response, and modules from Django and other files (cosine_smilarity).
-    The settings module is imported from openai_project.settings to access the MEDIA_ROOT path.
-    The views and functions are defined within a Django application.
+The df_similarities DataFrame is loaded from the pickle file "C:/Users/44744/Desktop/embedded.pickle".
+The necessary imports are included, such as HttpResponse, JsonResponse, FileResponse, Http404, response, and modules from Django and other files (cosine_smilarity).
+The settings module is imported from openai_project.settings to access the MEDIA_ROOT path.
+The views and functions are defined within a Django application.
 
 Note: Make sure you have the required templates and necessary configurations in your Django project for these views to work correctly.
 
 The **cosine_similarity.py** is a python file that performs a search for embedded documents based on cosine similarity. It uses OpenAI's text-embedding-ada-002 model to generate embeddings for the user query and the documents in the dataframe.
 
 Here's how the code works
+The get_embedding function takes a text input and a model name as parameters and returns the embedding for the input text using the specified model.
+The search_docs function takes a dataframe (df), a user query (user_query), the number of top results to retrieve (top_n), and a boolean flag indicating whether to print the results (to_print). It calculates the embedding for the user query and computes the cosine similarity between the query embedding and the embeddings of the documents in the dataframe. It then sorts the dataframe based on the similarity scores and returns the top top_n results.
 
-    The get_embedding function takes a text input and a model name as parameters and returns the embedding for the input text using the specified model.
-
-    The search_docs function takes a dataframe (df), a user query (user_query), the number of top results to retrieve (top_n), and a boolean flag indicating whether to print the results (to_print). It calculates the embedding for the user query and computes the cosine similarity between the query embedding and the embeddings of the documents in the dataframe. It then sorts the dataframe based on the similarity scores and returns the top top_n results.
-
-    The davinci function takes a query as input. It reads a precomputed dataframe of document similarities from a pickle file. It then calls the search_docs function to retrieve the most similar documents based on the query. It sets up a conversation prompt by combining an initial prompt, the retrieved context from the similar documents, and the user question. It uses OpenAI's text-davinci-003 model to generate a response to the combined prompt.
+The davinci function takes a query as input. It reads a precomputed dataframe of document similarities from a pickle file. It then calls the search_docs function to retrieve the most similar documents based on the query. It sets up a conversation prompt by combining an initial prompt, the retrieved context from the similar documents, and the user question. It uses OpenAI's text-davinci-003 model to generate a response to the combined prompt.
 
 Please note that the code assumes you have the necessary dependencies installed and have a valid API key for OpenAI. Also, make sure you have the pickle file (embedded.pickle) in the specified location.
 
@@ -172,16 +169,16 @@ Please note that the code assumes you have the necessary dependencies installed 
 
 hace.js: JavaScript code snippet that defines several functions for handling user interactions on a web page. Here's a brief explanation of each function
 
-    askHace(): This function is called when the user performs a query using an input field with the id "haceInput". It retrieves the query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by calling the openHacePopUp() function with the received message.
+askHace(): This function is called when the user performs a query using an input field with the id "haceInput". It retrieves the query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by calling the openHacePopUp() function with the received message.
 
-    Search(): This function is called when the user performs a search using an input field with the id "myInput". It retrieves the search query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by dynamically generating a table with search results based on the received JSON data. It also sets up event listeners for each row in the table to open a content popup.
+Search(): This function is called when the user performs a search using an input field with the id "myInput". It retrieves the search query text, sends an AJAX GET request to a specified URL with the query text as a parameter, and handles the success response by dynamically generating a table with search results based on the received JSON data. It also sets up event listeners for each row in the table to open a content popup.
 
-    openPopUp(tr, text): This function is called when a user clicks on a row in the search results table. It takes the clicked row element (tr) and the associated content text as parameters. It opens a content popup by toggling the "show" class on the popup element and sets the popup content to the provided text.
+openPopUp(tr, text): This function is called when a user clicks on a row in the search results table. It takes the clicked row element (tr) and the associated content text as parameters. It opens a content popup by toggling the "show" class on the popup element and sets the popup content to the provided text.
 
-    openHacePopUp(text): This function is called when a response is received from the Hace API call. It takes the response text as a parameter. It opens a Hace popup by toggling the "show" class on the popup element and sets the popup content to the received text.
+openHacePopUp(text): This function is called when a response is received from the Hace API call. It takes the response text as a parameter. It opens a Hace popup by toggling the "show" class on the popup element and sets the popup content to the received text.
 
-    switch_tab(evt, tab): This function is called when a tab link is clicked. It takes the event object (evt) and the target tab element (tab) as parameters. It hides all tab content elements by setting their display style to "none", removes the "active" class from all tab links, shows the selected tab content element by setting its display style to "block", and adds the "active" class to the clicked tab link.
-  This is used in conjunction with HTML and CSS code to create an interactive web page where users can perform searches and view search results and additional information in popups.
+switch_tab(evt, tab): This function is called when a tab link is clicked. It takes the event object (evt) and the target tab element (tab) as parameters. It hides all tab content elements by setting their display style to "none", removes the "active" class from all tab links, shows the selected tab content element by setting its display style to "block", and adds the "active" class to the clicked tab link.
+This is used in conjunction with HTML and CSS code to create an interactive web page where users can perform searches and view search results and additional information in popups.
 
   
 ## Usage
