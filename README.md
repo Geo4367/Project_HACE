@@ -93,11 +93,38 @@ Django project along with the UI from end will be moved to the cloud.
   
   Once the PDF file is uploaded to the S3 bucket directory, a trigger is set to the S3, which initiates the lambda function. The lambda function, in turn, creates a Textract job with a unique job ID. Subsequently, a cache file in JSON format is generated and stored in the intermediate S3 bucket directory. Upon this occurrence, an SNS notification is sent to notify the second lambda function, which accesses the intermediate S3 bucket directory to locate the cached JSON file using the previously generated job ID. The text parsing lambda function then extracts the text from the JSON file created during the intermediate step, and saves it as a CSV file in the output S3 bucket.
   
+  After which the folder containing the CSV will be mounted on the EC2 instance. Once this is done the '**Embedder Code**', a python file deployed in the EC2 will continuously monitor the csv folder for any new csv files
+
+what happens inside the embedder file is meticulously defined below
+
+embedder file is a Python script that monitors a folder for text files, processes the files, generates embeddings for the text using the OpenAI API, and saves the results in a pandas DataFrame. Here's a breakdown of the script:
+
+1. Import necessary libraries: The script starts by importing the required libraries, including `json`, `boto3`, `os`, `csv`, `io`, `pickle`, `time`, `pandas`, `openai`, and `clear_output`.
+
+2. Set up API key and variables: The script sets up the OpenAI API key (`api_key`) and initializes variables for request tracking and rate limiting.
+
+3. Define the `generate_embeddings` function: This function takes a text input and model name as parameters and uses the OpenAI API to generate embeddings for the text. It keeps track of the request count and handles rate limiting to ensure the API usage stays within the allowed limits.
+
+4. Define DataFrame and file paths: The script sets up the DataFrame (`df`) with column names and defines the paths for the folder to monitor for new files (`folder_to_monitor`), the folder to move processed files to (`processed_folder`), and the location to save the pickle file containing the DataFrame (`pickle_location`).
+
+5. Initialize the DataFrame and pickle file: The script creates an empty DataFrame and saves it as a pickle file.
+
+6. Monitor the folder for new files: The script enters an infinite loop and repeatedly checks the folder for new files. It processes any new files by reading their contents, generating embeddings for the text using the `generate_embeddings` function, and appending the results to the DataFrame (`df`). After processing, it moves the processed files to the specified folder.
+
+7. Load the existing DataFrame from the pickle file: At the end of each loop iteration, the script loads the existing DataFrame from the pickle file (`pickle_location`) and assigns it to `ret_df`.
+
+8. Merge the processed DataFrame with the existing DataFrame: The script concatenates the processed DataFrame (`df`) with the existing DataFrame (`ret_df`) and assigns the result to `ret_df`.
+
+9. Clear the processed DataFrame: The script clears the processed DataFrame (`df`) to prepare for the next iteration.
+
+10. Save the updated DataFrame to the pickle file: The script saves the updated DataFrame (`ret_df`) to the pickle file (`pickle_location`) to persist the data between iterations.
+
+11. Output the types of the embeddings: The script iterates over the `ada_v2_embedding` column of the DataFrame (`ret_df`) and prints the type of each embedding.
+
+12. Wait before checking again: The script pauses execution for 60 seconds before starting the next iteration to avoid continuous checking of the folder.
+
+The script continues to monitor the folder, process new files, and update the DataFrame with the embeddings until it is interrupted externally or a specific condition is met.
   
-
-  
-
-
 ## Usage
 
 Explain how to use your project or application. Provide instructions, code samples, or examples to help users understand how to interact with the project. You can also include screenshots or GIFs to demonstrate functionality.
