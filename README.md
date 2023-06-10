@@ -98,8 +98,8 @@ Django project along with the UI from end will be moved to the cloud.
   
   Once the PDF file is uploaded to the S3 bucket directory, a trigger is set to the S3, which initiates the lambda function. The lambda function, in turn, creates a Textract job with a unique job ID. Subsequently, a cache file in JSON format is generated and stored in the intermediate S3 bucket directory. Upon this occurrence, an SNS notification is sent to notify the second lambda function, which accesses the intermediate S3 bucket directory to locate the cached JSON file using the previously generated job ID. The text parsing lambda function then extracts the text from the JSON file created during the intermediate step, and saves it as a CSV file in the output S3 bucket.
   
- follow the tutorial in the below link for any clarifications:
- https://www.youtube.com/watch?v=L6vdd9OYF_8
+** follow the tutorial in the below link for any clarifications:
+ https://www.youtube.com/watch?v=L6vdd9OYF_8**
   
  **3. Embedder Code(EC2)** 
  
