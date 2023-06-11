@@ -190,43 +190,59 @@ The image below shows the end product, once the project is configured correctly
 
 
 ## Configuration
+Lambda: necessary layers must be added to the lambda function to achieve the desired result. 
+![image](https://github.com/Geo4367/Project_HACE/assets/86464328/b9b1871e-649c-41d5-9dfe-4f4c6a98fb32)
 
-If your project requires configuration files or settings, explain how to set them up. Include information about environment variables, configuration options, or any other necessary configurations.
-
-## Contributing
-
-If you want others to contribute to your project, provide guidelines for how they can do so. Include information about submitting bug reports, feature requests, or pull requests. Specify any coding standards, conventions, or guidelines that contributors should follow.
+EC2: For the deployment of the embedder file and the django project, necessary dependancies must be installed beforehand. As per the requirement of the different 
+python files, necessary libraries must be installed. 
 
 ## Credits
 
-Acknowledge and give credit to any individuals, organizations, or resources that have contributed to your project. This can include libraries, frameworks, or tutorials that you used.
+tutorial 1: AWS textract 
+  https://www.youtube.com/watch?v=L6vdd9OYF_8&t=292s
 
-## License
-
-Specify the license under which your project is distributed. Include any disclaimers or limitations of liability if applicable.
-
-## Support
-
-Provide information on how users can seek support for your project. Include contact details, links to documentation, or community forums where users can find help.
-
-## Frequently Asked Questions (FAQ)
-
-If there are common questions or concerns about your project, address them in this section. Provide clear and concise answers to help users resolve common issues.
-
-## Changelog
-
-If your project has multiple versions or releases, include a changelog that outlines the changes, bug fixes, and new features in each version.
 
 ## Roadmap
 
-If you have plans for future development or enhancements, share them in this section. Provide an overview of upcoming features or improvements you plan to implement.
+Making use of **Pinecone database ** instead of pandas dataframe
+
+The Pinecone vector database offers several advantages that make it a powerful tool for working with high-dimensional vectors:
+
+1. **Efficient Similarity Search:** Pinecone is designed for fast and accurate similarity search, enabling you to find the most similar vectors to a given query efficiently. It utilizes advanced indexing and retrieval algorithms optimized for high-dimensional data.
+
+2. **Scalability:** Pinecone is built to scale with your data. It can handle millions or even billions of vectors, ensuring that you can easily accommodate large-scale applications and growing datasets.
+
+3. **Real-Time Updates:** Pinecone supports real-time updates, allowing you to add or remove vectors from the database without downtime. This is particularly useful in dynamic applications where vectors need to be continuously updated or replaced.
+
+4. **High Dimensionality Support:** Pinecone excels in handling high-dimensional vectors, such as those commonly encountered in natural language processing, computer vision, and other machine learning domains. It efficiently indexes and searches vectors with hundreds or even thousands of dimensions.
+
+5. **API Integration:** Pinecone provides an easy-to-use API that allows seamless integration into your applications. You can quickly integrate Pinecone into your existing workflows and leverage its capabilities without extensive infrastructure setup.
+
+6. **Cloud-Based Service:** Pinecone is a cloud-based service, which means you don't have to worry about managing the underlying infrastructure. It handles the scalability, availability, and performance aspects, allowing you to focus on your application logic.
+
+7. **Community and Support:** Pinecone offers a supportive community and comprehensive documentation, making it easier to get started and troubleshoot any issues you may encounter. The Pinecone team actively maintains and improves the platform, ensuring a reliable and up-to-date experience.
+
+Overall, the Pinecone vector database provides an efficient and scalable solution for similarity search, enabling you to build applications that require fast and accurate retrieval of high-dimensional vectors.
+
+**Hybrid search engine:**
+
+A hybrid search engine combines the strengths of multiple search techniques, such as semantic search, keyword search, and other advanced algorithms, to provide a more comprehensive and accurate search experience. Here are some advantages of a hybrid search engine over a simple semantic search engine:
+
+1. Enhanced Relevance: A hybrid search engine can leverage semantic search capabilities to understand the context and meaning of search queries, resulting in more accurate and relevant search results. By incorporating keyword-based search as well, it can consider both the literal terms used in the query and the underlying intent, leading to improved relevance.
+
+2. Improved Precision and Recall: Semantic search engines primarily rely on the meaning and relationships between words, but they may sometimes overlook relevant results if the query doesn't match exactly or if the semantic analysis doesn't capture the desired context. A hybrid search engine can address this limitation by combining semantic search with keyword search, ensuring a higher precision and recall rate by considering both textual relevance and contextual understanding.
+
+3. Handling Ambiguity: Language can be ambiguous, and semantic search engines may struggle to disambiguate certain queries with multiple possible interpretations. Hybrid search engines can overcome this challenge by incorporating additional search techniques. For example, they can consider the search history, user preferences, or user location to refine the search results and provide more accurate answers.
+
+4. Diverse Content Discovery: Semantic search engines tend to focus on retrieving highly relevant results, which can sometimes result in a narrow range of content. Hybrid search engines can offer a broader content discovery experience by incorporating keyword search, which may include related but not directly relevant information. This enables users to explore diverse perspectives and discover new content that they might not have found otherwise.
+
+5. Flexibility: Hybrid search engines can be more flexible in adapting to different user preferences and needs. They can provide a combination of search approaches, allowing users to choose the most suitable method based on their requirements. This versatility ensures a personalized search experience tailored to individual preferences, improving overall user satisfaction.
+
+In summary, a hybrid search engine offers advantages such as enhanced relevance, improved precision and recall, better handling of ambiguity, diverse content discovery, and increased flexibility. By combining different search techniques, it provides a more comprehensive and accurate search experience, catering to a wider range of user needs.
+
 
 ## Acknowledgments
 
-Express gratitude to individuals or organizations that have supported or influenced your project. This can include mentors, colleagues, or open-source communities.
+Prof Kaveh Kiani
+Elizabeth Burroughs
 
-## Appendix
-
-Include any additional information, references, or resources that might be useful to readers. This can include links to related documentation, tutorials, or examples.
-
-Remember that the above structure is just a suggested format, and you can adapt it to fit the specific needs of your project. The goal is to provide clear and relevant information that helps users understand and engage with your project effectively.
