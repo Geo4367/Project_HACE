@@ -1,10 +1,5 @@
 # HACE SEARCH ENGINE
 
-
-
-
-
-
 ![image](https://github.com/Geo4367/Project_HACE/assets/86464328/404b960d-c469-4673-aa16-49623a3c2a28)
 
 
@@ -188,6 +183,9 @@ Better to install a tomcat server inside the EC2, inside which the TestWeb user 
 
   
 ## Usage
+The image below shows the end product, once the project is configured correctly
+
+![image](https://github.com/Geo4367/Project_HACE/assets/86464328/4e98e5e6-9aca-4828-8b0a-3507ca829b8e)
 
 
 
