@@ -143,7 +143,7 @@ The** view.py** in the query app of the django project includes Django views for
 
     download: This view handles file downloads. It takes the filename as a parameter and constructs the file path. If the file exists, it creates a FileResponse with the file content and sets the appropriate headers for the browser to download the file. If the file does not exist, it raises an Http404 exception.
 
-    ask_hace: This view handles HACE (Hybrid Agent for Customer Engagement) requests. If the request method is GET, it retrieves the query parameter (q) and passes it to the davinci function in the cosine_smilarity module. The response from davinci is returned as an HTTP response. If the request method is not GET, it returns an "Invalid request method" response.
+    ask_hace: This view handles HACE requests. If the request method is GET, it retrieves the query parameter (q) and passes it to the davinci function in the cosine_smilarity module. The response from davinci is returned as an HTTP response. If the request method is not GET, it returns an "Invalid request method" response.
 
 The code also includes the following additional code:
 The df_similarities DataFrame is loaded from the pickle file "C:/Users/44744/Desktop/embedded.pickle".
@@ -243,6 +243,6 @@ In summary, a hybrid search engine offers advantages such as enhanced relevance,
 
 ## Acknowledgments
 
-Prof Kaveh Kiani
+Prof Kaveh Kiani, 
 Elizabeth Burroughs
 
